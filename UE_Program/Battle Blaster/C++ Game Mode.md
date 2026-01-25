@@ -1,0 +1,2 @@
+[虚幻引擎中的 Game Mode 和 Game State | 虚幻引擎 5.7 文档 | Epic Developer Community](https://dev.epicgames.com/documentation/zh-cn/unreal-engine/game-mode-and-game-state-in-unreal-engine)  
+想要在运行时控制玩家，我们需要创建一个游戏模式并更改默认的Pawn类
