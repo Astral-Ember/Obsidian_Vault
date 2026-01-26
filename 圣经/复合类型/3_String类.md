@@ -18,3 +18,5 @@ string str2 = "panther"; // create an initialized string
 charr1 = charr2;// INVALID, no array assignment
 strl = str2; VALID, object assignment ok
 ```
+
+string类简化了字符串合并操作。可以使用运算符+将两个string对象合并起来，还可以使用运算符+=将字符串附加到string对象的末尾。
