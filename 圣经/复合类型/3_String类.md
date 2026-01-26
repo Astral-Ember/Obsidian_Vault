@@ -1,1 +1,27 @@
 使用指针来处理字符串
+在很多方面，使用string对象的方式与使用字符数组相同
+
+可以使用C-风格字符串来初始化string对象。
+可以使用cin来将键盘输入存储到string 对象中。
+可以使用cout来显示string对象。
+可以使用数组表示法来访问存储在string对象中的字符。
+
+
+## 1.赋值、拼接和附加
+
+使用字符数组时不能将一个数组赋值给另一个数组，但是可以将一个string对象赋值给另一个string对象
+```
+char charr1 [20];
+char charr2 [20] = "jaguar"; // create an initialized array
+// create an empty string object
+// create an initialized string
+// INVALID, no array assignment
+VALID, object assignment ok
+
+// create an empty array
+
+string strl;
+string str2 = "panther";
+charr1 = charr2;
+strl = str2;
+```
