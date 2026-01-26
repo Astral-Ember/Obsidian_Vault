@@ -26,3 +26,6 @@ str3 = strl + str2;// assign str3 the joined strings
 str1 += str2;// add str2 to the end of str1
 ```
 
+
+
+## 2.string类 I/O
