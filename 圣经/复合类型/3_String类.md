@@ -11,17 +11,10 @@
 
 使用字符数组时不能将一个数组赋值给另一个数组，但是可以将一个string对象赋值给另一个string对象
 ```
-char charr1 [20];
+char charr1 [20]; // create an empty array
 char charr2 [20] = "jaguar"; // create an initialized array
-// create an empty string object
-// create an initialized string
-// INVALID, no array assignment
-VALID, object assignment ok
-
-// create an empty array
-
-string strl;
-string str2 = "panther";
-charr1 = charr2;
-strl = str2;
+string strl; // create an empty string object
+string str2 = "panther"; // create an initialized string
+charr1 = charr2;// INVALID, no array assignment
+strl = str2; VALID, object assignment ok
 ```
