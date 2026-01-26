@@ -20,3 +20,9 @@ strl = str2; VALID, object assignment ok
 ```
 
 string类简化了字符串合并操作。可以使用运算符+将两个string对象合并起来，还可以使用运算符+=将字符串附加到string对象的末尾。
+```
+string str3;
+str3 = strl + str2;// assign str3 the joined strings
+str1 += str2;// add str2 to the end of str1
+```
+
