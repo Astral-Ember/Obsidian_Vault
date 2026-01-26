@@ -29,3 +29,9 @@ str1 += str2;// add str2 to the end of str1
 
 
 ## 2.string类 I/O
+可以使用cin和运算符 >> 来将输入存储到string对象中，使用cout和运算符 << 来显示string 对象，其句法与处理C-风格字符串相同。但每次读取一行而不是一个单词时，使用的句法不同
+C-风格字符串读取一行使用
+`cin.getline(charname,size)`
+但是string不知道字符串长度，所以使用
+`getline(cin,strname)`
+
