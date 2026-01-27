@@ -14,5 +14,5 @@ for (initialization; test-expression; update-expression)
 test-expression(测试表达式)决定循环体是否被执行。通常，这个表达式是关系表达式，即对两个值进行比较。如果比较结果为真（非零），则程序将执行循环体；如果表达式结果为假（0或false），循环结束
 update-expression(更新表达式)在每轮循环结束时执行，此时循环体已经执行完毕
 
-## 2.for循环
+## 2.for循环访问字符串
 
