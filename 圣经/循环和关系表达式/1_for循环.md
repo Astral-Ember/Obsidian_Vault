@@ -11,4 +11,4 @@ for (initialization; test-expression; update-expression)
 	body
 ```
 
-test-expression(测试表达式)决定循环体是否被执行。通常，这个表达式是关系表达式，即对两个值进行比较
+test-expression(测试表达式)决定循环体是否被执行。通常，这个表达式是关系表达式，即对两个值进行比较。如果比较结果为真（非零），则程序将执行循环体；
