@@ -18,4 +18,5 @@ else
 ```
 如果测试条件为true或非零，则程序将执行statement1，跳过statement2；如果测试条件为false或0，则程序将跳过statement1，执行statement2
 
-## 2. if elseif else结构
+## 2. if  else if  else结构
+当处理两个以上的选择时，可以选择这种结构
