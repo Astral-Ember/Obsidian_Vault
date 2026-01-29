@@ -16,3 +16,4 @@ if (test-condition)
 else
 	statement2
 ```
+如果测试条件为true或非零，则程序将执行statement1，跳过statement2；如果测试条件为false或0，则程序将跳过statement1，执行statement2
