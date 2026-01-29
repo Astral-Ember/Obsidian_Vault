@@ -5,4 +5,4 @@ if 语句的语法与while 相似:
 if (test-condition)
 	statement
 ```
-如果test-condition(测试条件)为true，则程序将执行statement(语句)，
+如果test-condition(测试条件)为true，则程序将执行statement(语句)，反之则跳过statement
