@@ -19,4 +19,4 @@ else
 如果测试条件为true或非零，则程序将执行statement1，跳过statement2；如果测试条件为false或0，则程序将跳过statement1，执行statement2
 
 ## 2. if  else if  else结构
-当处理两个以上的选择时，可以选择这种结构
+当处理两个以上的选择时，可以选择这种结构。else之后可以是一条语句，也可以是语句块。由于if else语句本就是一条语句，可以放在else 后面
