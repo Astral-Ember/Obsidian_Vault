@@ -1,1 +1,1 @@
-public和private可以控制对类成员的访问，还存在另一个访问类别，用protected表示。关键字关键字protected 与 private相似,在类外只能用公有类成员
+public和private可以控制对类成员的访问，还存在另一个访问类别，用protected表示。关键字protected 与 private相似，在类外只能用公有类成员来访问protected部分中的类成员。private和protected之间的区别只有在基类派生的类中才会表现出来。派生类的成员可以直接访问基类的保护成员，但不能直接访问基类的私有成员。因此，对于外部世界来说，保护成员的行为与私有成员相似；但对于派生类来说，保护成员的行为与公有成员相似。
