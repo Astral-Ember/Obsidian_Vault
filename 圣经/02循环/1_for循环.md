@@ -20,7 +20,7 @@ update-expression(更新表达式)在每轮循环结束时执行，此时循环�
 使用string类可以直接访问，char也一样
 ```
 	string word = "abkdie";
-	for (int i = 0; i < word.size() - 1; i++)
+	for (int i = 0; i < word.size(); i++)
 		cout << word[i] << '\n';
 ```
 
