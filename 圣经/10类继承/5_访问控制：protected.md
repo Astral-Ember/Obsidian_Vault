@@ -1,0 +1,1 @@
+public和private可以控制对类成员的访问，还存在另一个访问类别，用protected表示。关键字关键字protected 与 private相似,在类外只能用公有类成员
