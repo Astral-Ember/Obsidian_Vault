@@ -4,4 +4,44 @@
 - 如果有多个构造函数，则必须以相同的方式使用new，要么都带中括号，要么都不带。因为只有一个析构函数，所有的构造函数都必须与它兼容。然而，可以在一个构造函数中使用new初始化指针，而在另一个构造函数中将指针初始化为空（0或C++11中的nullptr），这是因为delete（无论是带中括号还是不带中括号）可以用于空指针
 - 应定义一个复制构造函数，通过深度复制将一个对象初始化为另一个对象
   具体地说，复制构造函数应分配足够的空间来存储复制的数据，并复制数据，而不仅仅是数据的地址。另外，还应该更新所有受影响的静态类成员
+  
+```
+   Cd::Cd(const Cd& d)
+{
+	selections = d.selections;
+	playtime = d.playtime;
+
+	ULL l1 = strlen(d.performers);
+	performers = new char[l1 + 1];
+	strcpy_s(performers, l1 + 1, d.performers);
+
+	ULL l2 = strlen(d.label);
+	label = new char[l2 + 1];
+	strcpy_s(label, l2 + 1, d.label);
+}
+```
 - 应当定义一个赋值运算符，通过深度复制将一个对象复制给另一个对象
+  即删除、分配空间、复制
+```
+Cd& Cd::operator=(const Cd& d)
+{
+	if (this == &d)
+		return *this;
+
+	delete[] performers;
+	delete[] label;
+
+	selections = d.selections;
+	playtime = d.playtime;
+
+	ULL l1 = strlen(d.performers);
+	performers = new char[l1 + 1];
+	strcpy_s(performers, l1 + 1, d.performers);
+
+	ULL l2 = strlen(d.label);
+	label = new char[l2 + 1];
+	strcpy_s(label, l2 + 1, d.label);
+
+	return *this;
+}
+```
