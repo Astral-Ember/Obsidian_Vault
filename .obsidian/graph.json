@@ -15,7 +15,7 @@
       }
     },
     {
-      "query": "file:00_UE_Study",
+      "query": "file:圣经の目录",
       "color": {
         "a": 1,
         "rgb": 14725458
@@ -32,6 +32,6 @@
   "repelStrength": 10,
   "linkStrength": 1,
   "linkDistance": 250,
-  "scale": 0.22570083558567056,
+  "scale": 0.1148279826893792,
   "close": false
 }
