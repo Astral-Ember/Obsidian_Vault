@@ -1,3 +1,12 @@
+
+## 核心
+在 GAS (Gameplay Ability System) 中，理解 **Owner (所有者)** 和 **Avatar (化身)** 的关系是掌握该系统的核心。简单来说，这是一个**大脑与肉体**的分离设计。
+
+
+
+
+
+
 ## **技能系统组件** (`UAbilitySystemComponent`)
 
 **技能系统组件** (`UAbilitySystemComponent`) 是Actor和 **游戏玩法技能组件（Gameplay Ability System）** 之间的桥梁。Actor需要拥有自己的技能系统组件，或访问PlayerState或Pawn上的技能系统组件，才能与游戏玩法技能系统进行互动，这是一个Actorcomponent，处理GAS中的所有交互
