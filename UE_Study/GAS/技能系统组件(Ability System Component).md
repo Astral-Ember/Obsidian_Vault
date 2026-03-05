@@ -4,4 +4,7 @@
 
 一些步骤：
 - 在插件中要启用Gameplay Ability
-- 在Build.cs文件中添加``
+- 在Build.cs文件中添加`"GameplayAbilities", "GameplayTags","GameplayTasks"` 
+- 声明必要头文件`#include "AbilitySystemInterface.h"`,`#include "AbilitySystemComponent.h"`
+- 声明`TObjectPtr<UAbilitySystemComponent> AbilitySystemComponent;`并定义
+- 重写`GetAbilitySystemComponent()`并`return AbilitySystemComponent;`
