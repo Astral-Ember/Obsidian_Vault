@@ -21,3 +21,40 @@ UAbilitySystemComponent* AGAS_PlayerCharacter::GetAbilitySystemComponent() const
     return PlayerState->GetAbilitySystemComponent();  
 }
 ```
+
+对于服务端声明`virtual void PossessedBy(AController* NewController) override;`并定义：
+```
+void AGAS_PlayerCharacter::PossessedBy(AController* NewController)  
+{  
+    Super::PossessedBy(NewController);  
+    if (!GetAbilitySystemComponent()) return;  
+    GetAbilitySystemComponent()->InitAbilityActorInfo(GetPlayerState(), this);  
+}
+```
+
+对于客户端声明`virtual void OnRep_PlayerState() override;`并定义：
+```
+void AGAS_PlayerCharacter::OnRep_PlayerState()  
+{  
+    Super::OnRep_PlayerState();  
+    if (!GetAbilitySystemComponent()) return;  
+    GetAbilitySystemComponent()->InitAbilityActorInfo(GetPlayerState(), this);  
+}
+```
+
+### `InitAbilityActorInfo` 具体干了什么？
+
+它在告诉 `AbilitySystemComponent` (ASC) 两件非常关键的事：
+
+1. **Owner 是谁？**（数据归谁管）：在这里是 `GetPlayerState()`。ASC 会去这里找属性（血量、蓝量）和技能列表。
+    
+2. **Avatar 是谁？**（技能表现给谁）：在这里是 `this`（即 Character）。ASC 以后播动画（Montage）、播放特效（GameplayCue）都会在这个 Character 上执行。
+
+
+### 在 GAS 项目中，代码实现顺序通常是这样的：
+
+1. **第一步（定义）：** 在 `PlayerState` 中创建 `AbilitySystemComponent` 对象。
+    
+2. **第二步（寻找）：** 在 `Character` 中实现 `GetAbilitySystemComponent()`，让 Character 能通过 PS 访问到 ASC。
+    
+3. **第三步（握手）：** 在 `PossessedBy` (服务器) 和 `OnRep_PlayerState` (客户端) 调用 `InitAbilityActorInfo`

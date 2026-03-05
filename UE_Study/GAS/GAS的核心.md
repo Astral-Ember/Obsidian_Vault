@@ -2,7 +2,67 @@
 ## 核心
 在 GAS (Gameplay Ability System) 中，理解 **Owner (所有者)** 和 **Avatar (化身)** 的关系是掌握该系统的核心。简单来说，这是一个**大脑与肉体**的分离设计。
 
+### 1. 核心定义：谁是谁？
 
+在你的代码场景中（`PlayerState` 模式），它们的角色分配如下：
+
+- **Owner Actor (所有者):** 逻辑上的拥有者。
+    
+    - 通常是 **`PlayerState`**。
+        
+    - **特点：** 在整个关卡中持续存在，玩家死亡重生时它不会销毁。它负责保存数据（如等级、属性、已获得的技能）。
+        
+- **Avatar Actor (化身):** 物理上的表现者。
+    
+    - 通常是 **`Character`** 或 **`Pawn`**。
+        
+    - **特点：** 玩家在场景中的三维实体。它负责执行动作（播动画、放特效、处理碰撞）。
+        
+
+---
+
+### 2. 它们之间的关系
+
+它们通过 `InitAbilityActorInfo(Owner, Avatar)` 函数“绑定”在一起。这种设计带来了三大优势：
+
+#### A. 死亡重生的平滑处理
+
+如果你的 `ASC` 挂在 `Character` 上，一旦玩家掉进岩浆死亡，`Character` 销毁，你的技能和属性也就丢了。
+
+- **分离后：** `Character` 死了销毁掉，但 `PlayerState`（Owner）还在。当新的 `Character` 生成后，再次调用 `InitAbilityActorInfo`，把新的 `Character` 设为 `Avatar`。
+    
+- **结果：** 玩家复活后，技能和血量上限依然保持不变。
+    
+
+#### B. “灵魂附体” (Possession)
+
+想象一下你的玩家可以控制一辆坦克，或者控制一只小鸟：
+
+- **Owner** 始终是你的 `PlayerState`。
+    
+- **Avatar** 可以从 `HumanCharacter` 切换到 `TankPawn`。
+    
+- **结果：** 你的玩家数据（Owner）没变，但施展技能的表现形式（Avatar）变了。
+    
+
+#### C. 网络同步的层级
+
+- **Owner** 负责处理网络权限和状态同步的核心逻辑。
+    
+- **Avatar** 负责处理客户端预测（Client Prediction）的表现。
+    
+
+---
+
+### 3. 代码中的体现
+
+当你调用 `InitAbilityActorInfo` 时，你实际上是在告诉 GAS：
+
+一旦绑定完成：
+
+- 调用 `GetOwnershipActor()` 会得到 `PlayerState`。
+    
+- 调用 `GetAvatarActor()` 会得到 `Character`。
 
 
 
