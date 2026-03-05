@@ -7,4 +7,17 @@
 - 在Build.cs文件中添加`"GameplayAbilities", "GameplayTags","GameplayTasks"` 
 - 声明必要头文件`#include "AbilitySystemInterface.h"`,`#include "AbilitySystemComponent.h"`
 - 声明`TObjectPtr<UAbilitySystemComponent> AbilitySystemComponent;`并定义
-- 重写`GetAbilitySystemComponent()`并`return AbilitySystemComponent;`
+- 重写`virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override;`并`return AbilitySystemComponent;`
+
+链接中官方实现方法是在actor类中重写GetAbilityComponent()但是如果在Player State类中实现，就需要在角色类中在此重写GetAbilityComponent()以返回AbilitySystemComponent
+具体方法是：
+在角色类的头文件中声明`virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override;`
+定义过程为：声明一个对应的Player State对象并通过Cast转换GetPlayerState()，然后返回Player State的GetAbilitySystemComponent()
+```
+UAbilitySystemComponent* AGAS_PlayerCharacter::GetAbilitySystemComponent() const  
+{  
+    AGAS_PlayerState* PlayerState = Cast<AGAS_PlayerState>(GetPlayerState());  
+    if (!PlayerState) return nullptr;  
+    return PlayerState->GetAbilitySystemComponent();  
+}
+```
