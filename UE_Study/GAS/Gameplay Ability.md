@@ -26,3 +26,9 @@ void AGAS_BaseCharacter::GiveStartupAbility()
 由于只有服务器才能赋予或撤销技能因此要在`PossessedBy`中执行该函数
 
 在角色蓝图的Ability数组中添加GamePlayAbility蓝图
+
+
+## 通过Gameplay Tag激活Ability
+
+在输入的回调函数处实现
+主要是要获取AbilitySystemComponent，由于输入操作的实现是在PlayerController类中实现，通过静态函数库`UAbilitySystemBlueprintLibrary::GetAbilitySystemComponent(GetPawn());`可以获取到角色的AbilitySystemComponent，不需要使用任何转换
