@@ -1,0 +1,1 @@
+GameplayEvent允许我们向角色发送事件
