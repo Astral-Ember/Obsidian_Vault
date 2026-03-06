@@ -1,6 +1,6 @@
 [使用虚幻引擎中的Gameplay Abilities | 虚幻引擎 5.7 文档 | Epic Developer Community](https://dev.epicgames.com/documentation/zh-cn/unreal-engine/using-gameplay-abilities-in-unreal-engine)
 
-
+可以在C++中定义一个BaseAbilityClass（继承自UGameplayAbility）
 
 ## Gameplay Ability的一般流程：
 1. 创建Gameplay标签（可新建文件后使用命名空间创建）
