@@ -1,1 +1,5 @@
 GameplayEvent允许我们向角色发送事件
+
+创建动画通知蓝图，在这个蓝图中使用节点：将Gameplay事件发送到Actor，在动画蒙太奇中添加动画通知，并选择合理的tag
+
+在Gameplay Ability蓝图中使用等待Gameplay事件节点，并添加对应的tag
