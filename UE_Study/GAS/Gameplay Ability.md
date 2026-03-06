@@ -1,5 +1,14 @@
 [使用虚幻引擎中的Gameplay Abilities | 虚幻引擎 5.7 文档 | Epic Developer Community](https://dev.epicgames.com/documentation/zh-cn/unreal-engine/using-gameplay-abilities-in-unreal-engine)
 
+
+
+## Gameplay Ability的一般流程：
+1. 创建Gameplay标签（可新建文件后使用命名空间创建）
+2. 在玩家控制器中创建回调函数（总之就是控制输入的地方）
+3. 创建GameplayAbility蓝图并添加到GameplayAbility数组中
+
+
+
 添加GameplayAbility蓝图（有事件激活能力和事件OnEndAbility节点）
 
 在角色类中
