@@ -6,6 +6,7 @@
 - 在插件中要启用Gameplay Ability
 - 在Build.cs文件中添加`"GameplayAbilities", "GameplayTags","GameplayTasks"` 
 - 声明必要头文件`#include "AbilitySystemInterface.h"`,`#include "AbilitySystemComponent.h"`
+- 继承`AbilitySystemInterface`
 - 声明`TObjectPtr<UAbilitySystemComponent> AbilitySystemComponent;`并定义
 - 重写`virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override;`并`return AbilitySystemComponent;`
 
