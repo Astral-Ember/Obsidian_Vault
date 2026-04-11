@@ -8,7 +8,7 @@
 - 声明必要头文件`#include "AbilitySystemInterface.h"`,`#include "AbilitySystemComponent.h"`
 - 继承`AbilitySystemInterface`
 - 声明`TObjectPtr<UAbilitySystemComponent> AbilitySystemComponent;`并定义
-- 重写`virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override;`并`return AbilitySystemComponent;`（因为在`AbilitySystemInterface`中
+- 重写`virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override;`并`return AbilitySystemComponent;`（因为在`AbilitySystemInterface`中`GetAbilitySystemComponent()`为纯虚函数
 
 链接中官方实现方法是在actor类中重写GetAbilityComponent()但是如果在Player State类中实现，就需要在角色类中在此重写GetAbilityComponent()以返回AbilitySystemComponent
 具体方法是：
