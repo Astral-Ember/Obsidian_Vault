@@ -56,3 +56,14 @@
 ## 同步服务器与客户端的变量
 这里包括GAS变量和普通C++变量的实现方法：
 
+| **特性**    | **Gameplay Attribute (GAS)**               | **普通 C++ 变量 (Native)**                     |
+| --------- | ------------------------------------------ | ------------------------------------------ |
+| **底层类型**  | `FGameplayAttributeData` (结构体)             | 基本类型 (`float`, `int32`, `bool`, `FVector`) |
+| **变量声明**  | `UPROPERTY(ReplicatedUsing = OnRep_HP)`    | `UPROPERTY(Replicated)`                    |
+| **同步内容**  | **双值同步**：同时包含 `BaseValue` 和 `CurrentValue` | **单值同步**：仅同步当前变量存储的值                       |
+| **必须注册**  | 是，在 `GetLifetimeReplicatedProps` 中         | 是，在 `GetLifetimeReplicatedProps` 中         |
+| **推荐宏**   | `DOREPLIFETIME_CONDITION_NOTIFY`           | `DOREPLIFETIME`                            |
+| **回调机制**  | 必须配合 `GAMEPLAYATTRIBUTE_REPNOTIFY` 宏       | 手动编写常规业务代码                                 |
+| **修改权限**  | **服务器权威**（通过 `GameplayEffect` 修改）          | **服务器权威**（直接赋值或通过 RPC 修改）                  |
+| **预测与回滚** | **原生支持**：客户端预测后可由服务器自动纠偏                   | **不支持**：需要开发者手动实现预测逻辑                      |
+| **适用场景**  | 生命、魔法、攻击力、防御力等战斗数值                         | 等级、金钱、阵营、玩家名称、准备状态                         |
