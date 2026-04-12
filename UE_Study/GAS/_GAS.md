@@ -15,6 +15,17 @@
 	- Gameplay Effect可以不通过C++创建，需要在其细节面板的Gameplay Effect中的修饰符中选择在Attribute声明的属性，通过游戏效果配置属性
 4. 在ASC中应用GE
 	在整个GAS体系中`AbilitySystemComponent` (ASC) 是 `GameplayEffect` (GE) 的容器、执行者和分发中心
+	
+	第一步：创建 Effect Context
+		`FGameplayEffectContextHandle` 
+		包含了谁施放了效果、从哪里施放、打中了哪个物理点等上下文信息。
+		`FGameplayEffectContextHandle ContextHandle = MakeEffectContext();`
+	第二步：创建Effect Spec
+		`FGameplayEffectSpecHandle` 是 GE 的具体“规格说明书”，它结合了模板类（GE Class）和上下文数据。
+		`FGameplayEffectSpecHandle SpecHandle = MakeOutgoingSpec(GEClass, Level, ContextHandle);`
+	第三步：应用到目标
+		
+	
 	因此采取以下流程：
 	- 在ASC类中声明一个`TSubclassOf<UGameplayEffect>`的数组，用来承载GameplayEffect，这是数据驱动的思想；
 	- 创建一个函数，遍历数组，并对数组中的每一个元素（GameplayEffect）
