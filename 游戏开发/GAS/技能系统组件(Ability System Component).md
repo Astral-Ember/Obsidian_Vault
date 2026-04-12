@@ -23,7 +23,7 @@ UAbilitySystemComponent* AGAS_PlayerCharacter::GetAbilitySystemComponent() const
 }
 ```
 
-对于服务端声明`virtual void PossessedBy(AController* NewController) override;`并定义：
+对于服务端声明`virtual void PossessedBy(AController* NewController) override;`并定义： ^562c57
 ```
 void AGAS_PlayerCharacter::PossessedBy(AController* NewController)  
 {  
