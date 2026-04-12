@@ -42,3 +42,6 @@
 
 有必要条件：服务器权威，所以要在[[技能系统组件(Ability System Component)#^562c57|服务器端]]应用GE
 创建函数，在服务器端和客户端都要调用 ==`InitAbilityActorInfo`==
+
+对于服务器来说：
+需要调用
