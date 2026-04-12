@@ -47,3 +47,6 @@
 
 关于初始化有两种方式：
 一、在Actor（玩家类）中直接实现OnPossess（服务端）和OnRep_PlayerState（客户端）函数在其中调用ASC类下的`InitAbilityActorInfo`函数，传入两个参数，第一个是持有ASC的对象（**Owner Actor** 通常是 `PlayerState` 或 `Character`），第二个是世界中代表该实体的物理对象（**Avatar Actor** 通常是 `Character`）
+
+二、在PlayerController中实现（因为PlayerController是玩家的“灵魂”不会随玩家“死亡”而销毁）
+这个方法适用于更严格的网格同步环境
