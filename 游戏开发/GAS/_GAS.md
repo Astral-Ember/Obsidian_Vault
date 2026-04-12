@@ -40,4 +40,5 @@
 	- 在ASC类中声明一个`TSubclassOf<UGameplayEffect>`的数组，用来承载GameplayEffect，这是数据驱动的思想；
 	- 创建一个函数，遍历数组，并对数组中的每一个元素（GameplayEffect）`ApplyGameplayEffectSpecToSelf(*SpecHandle.Data.Get());`
 
-因为有必要条件：服务器权威，所以
+有必要条件：服务器权威，所以要在服务器端应用GE
+创建函数，在服务器端和客户端都要调用 ==`InitAbilityActorInfo`==
