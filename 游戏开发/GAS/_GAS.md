@@ -53,3 +53,5 @@
 二、在PlayerController中实现（因为PlayerController是玩家的“灵魂”不会随玩家“死亡”而销毁）
 这个方法适用于更严格的网格同步环境，在PlayerController中调用OnPossess（服务端）和AcknowledgePossession（客户端）
 
+## 同步服务器与客户端的属性
+
