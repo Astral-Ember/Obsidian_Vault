@@ -54,5 +54,5 @@
 这个方法适用于更严格的网格同步环境，在PlayerController中调用OnPossess（服务端）和AcknowledgePossession（客户端）
 
 ## 同步服务器与客户端的变量
-这里包括
+这里包括GAS变量和普通C++变量的实现方法：
 
