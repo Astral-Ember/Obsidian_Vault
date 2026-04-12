@@ -44,4 +44,6 @@
 创建函数，在服务器端和客户端都要调用 ==`InitAbilityActorInfo`==
 
 在这个流程中存在一些需要==注意==的点：
-在服务器端
+
+关于初始化有两种方式：
+一、在Actor（玩家类）中直接实现OnPossess（服务端）和OnRep_PlayerState（客户端）函数在其中调用ASC类下的`InitAbilityActorInfo`函数，传入两个参数，第一个是持有ASC的对象（**Owner Actor** 通常是 `PlayerState` 或 `Character`），第二个是世界中代表该实体的物理对象（**Avatar Actor** 通常是 `Character`）
