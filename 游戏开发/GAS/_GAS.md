@@ -36,7 +36,8 @@
 	第三步：应用到目标
 		`ApplyGameplayEffectSpecToSelf(*SpecHandle.Data.Get());`
 		
-	
 	因此采取以下流程：
 	- 在ASC类中声明一个`TSubclassOf<UGameplayEffect>`的数组，用来承载GameplayEffect，这是数据驱动的思想；
-	- 创建一个函数，遍历数组，并对数组中的每一个元素（GameplayEffect）
+	- 创建一个函数，遍历数组，并对数组中的每一个元素（GameplayEffect）`ApplyGameplayEffectSpecToSelf(*SpecHandle.Data.Get());`
+
+因为有必要条件：服务器权威，所以
