@@ -24,6 +24,7 @@
 		`FGameplayEffectSpecHandle` 是 GE 的具体“规格说明书”，它结合了模板类（GE Class）和上下文数据。
 		`FGameplayEffectSpecHandle SpecHandle = MakeOutgoingSpec(GEClass, Level, ContextHandle);`
 	第三步：应用到目标
+		`ApplyGameplayEffectSpecToSelf(*SpecHandle.Data.Get());`
 		
 	
 	因此采取以下流程：
