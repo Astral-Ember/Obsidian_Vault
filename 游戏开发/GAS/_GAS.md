@@ -25,7 +25,7 @@
 	- Gameplay Effect可以不通过C++创建，需要在其细节面板的Gameplay Effect中的修饰符中选择在Attribute声明的属性，通过GE配置属性
 4. 在ASC中应用GE
 	在整个GAS体系中`AbilitySystemComponent` (ASC) 是 `GameplayEffect` (GE) 的容器、执行者和分发中心
-	
+	在引用GE前，需要判断是否有权限，即使用`HasAuthority()`，判断是否在服务器上运行
 	第一步：创建 Effect Context
 		`FGameplayEffectContextHandle` 
 		包含了谁施放了效果、从哪里施放、打中了哪个物理点等上下文信息。
