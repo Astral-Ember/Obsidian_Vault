@@ -1,5 +1,11 @@
 [Gameplay Effects for the Gameplay Ability System in Unreal Engine | Unreal Engine 5.7 Documentation | Epic Developer Community](https://dev.epicgames.com/documentation/unreal-engine/gameplay-effects-for-the-gameplay-ability-system-in-unreal-engine)
 
+
+## 关于变量读取GE的值
+
+
+
+
 ## 1. 核心分类：持续时间策略 (Duration Policy)
 
 GE 的存在形态由它的持续时间决定，这直接影响它是修改 `BaseValue` 还是 `CurrentValue`。
