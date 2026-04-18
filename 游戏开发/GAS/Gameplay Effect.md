@@ -1,7 +1,9 @@
 [Gameplay Effects for the Gameplay Ability System in Unreal Engine | Unreal Engine 5.7 Documentation | Epic Developer Community](https://dev.epicgames.com/documentation/unreal-engine/gameplay-effects-for-the-gameplay-ability-system-in-unreal-engine)
 
 
-## 关于变量读取GE的值
+
+## 基础知识点
+Gameplay Effect通常不创建C++类，它用来
 
 
 
