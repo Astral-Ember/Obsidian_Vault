@@ -41,6 +41,22 @@
 	- 创建一个函数，遍历数组，并对数组中的每一个元素（GameplayEffect）`ApplyGameplayEffectSpecToSelf(*SpecHandle.Data.Get());`
 
 
+```
+void UMAbilitySystemComponent::ApplyGE()  
+{  
+    //HasAuthority是有权限的意思，只有拥有权限的才能执行，如果在服务器上运行，即返回true  
+    if (!GetOuter() || !GetOwner()->HasAuthority())  
+       return;  
+  
+    for (const TSubclassOf<UGameplayEffect>& GEClass : GEDAClass->GetGEClassArray())  
+    {       FGameplayEffectContextHandle Context = MakeEffectContext();  
+       FGameplayEffectSpecHandle SpecHandle = MakeOutgoingSpec(GEClass, 1.0f, Context);  
+       ApplyGameplayEffectSpecToSelf(*SpecHandle.Data.Get());  
+    }}
+```
+
+
+
 ## 在服务器和客户端的初始化
 必要条件：服务器权威，所以要在[[技能系统组件(Ability System Component)#^562c57|服务器端]]应用GE
 创建函数，在服务器端和客户端都要调用 ==`InitAbilityActorInfo`==
