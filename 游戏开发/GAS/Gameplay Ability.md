@@ -49,8 +49,14 @@ void AGAS_BaseCharacter::GiveStartupAbility()
 对于GA，==只有服务器才能赋予技能==，技能必须实例化，并且必须能够在服务器上运行，因此应用技能相关函数（自定义）必须要在服务器同步相关函数内调用，例如：`PossessedBy(AController* NewController)`或`OnPossess(APawn* InPawn)`
 应用GA可以在角色类中，也可以在ASC中，在哪里不重要，重要的是以下步骤：
 
-### 1、获取GA类
+### 授予技能
+#### 1、获取GA类
 通常是`TSubclassOf<UGameplayAbility>`可以通过数组，或者是DataAsset获取，总是，初始化GA，这是刚需
 
-### 2、GiveAbility
+#### 2、GiveAbility
 这是ASC中的一个函数，如果在角色类中定义需要通过哦GetAbilitySystemComponent，在这个类中虽然可以直接以GA类作为参数，但是还是最好显示定义`FGameplayAbilitySpec`再GiveAbility
+
+
+
+### 发动/调用技能
+在GameplayAbility类中（一般是继承自UGameplayAbility）覆写
