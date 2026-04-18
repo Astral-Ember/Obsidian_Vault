@@ -62,4 +62,4 @@ void AGAS_BaseCharacter::GiveStartupAbility()
 
 
 ### 发动/调用技能
-在GameplayAbility类中（一般是继承自UGameplayAbility）覆写`ActivateAbility()`函数，该函数会在调用ASC的
+在GameplayAbility类中（一般是继承自UGameplayAbility）覆写`ActivateAbility()`函数，该函数会在调用ASC的`TryActivateAbility()`后调用
