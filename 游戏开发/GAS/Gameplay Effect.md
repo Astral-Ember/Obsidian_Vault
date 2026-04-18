@@ -3,7 +3,8 @@
 
 
 ## 基础知识点
-Gameplay Effect通常不创建C++类，它用来
+Gameplay Effect通常不创建C++类，它用来决定GameplayAttribute怎么变
+通常要在Gameplay效果中选择我们在GameplayAttribute中定义的属性，
 
 
 
