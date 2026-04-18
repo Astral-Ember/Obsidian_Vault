@@ -9,6 +9,8 @@
 
 
 
+
+
 添加GameplayAbility蓝图（有事件激活能力和事件OnEndAbility节点）
 
 在角色类中
@@ -41,3 +43,13 @@ void AGAS_BaseCharacter::GiveStartupAbility()
 
 在输入的回调函数处实现
 主要是要获取AbilitySystemComponent，由于输入操作的实现是在PlayerController类中实现，通过静态函数库`UAbilitySystemBlueprintLibrary::GetAbilitySystemComponent(GetPawn());`可以获取到角色的AbilitySystemComponent，不需要使用任何转换
+
+
+## 别的应用方法
+总的来说，应用GA可以在角色类中，也可以在ASC中，在哪里不重要，重要的是一下步骤：
+
+### 1、获取GA类
+通常是`TSubclassOf<UGameplayAbility>`可以通过数组，或者是DataAsset获取，总是，初始化GA，这是刚需
+
+### 2、GiveAbility
+这是ASC中的一个函数，如果在角色类中定义需要通过哦GetAbilitySystemComponent，在这个类中虽然可以直接以GA类作为参数，但是还是最好显示定义`FGameplayAbilitySpec`再GiveAbility
