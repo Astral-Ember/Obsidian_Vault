@@ -1,4 +1,7 @@
 [使用虚幻引擎中的Gameplay Abilities | 虚幻引擎 5.7 文档 | Epic Developer Community](https://dev.epicgames.com/documentation/zh-cn/unreal-engine/using-gameplay-abilities-in-unreal-engine)
+源自`UGameplayAbility`重要函数均在该基类中定义
+
+
 
 可以在C++中定义一个BaseAbilityClass（继承自UGameplayAbility）
 
@@ -59,4 +62,4 @@ void AGAS_BaseCharacter::GiveStartupAbility()
 
 
 ### 发动/调用技能
-在GameplayAbility类中（一般是继承自UGameplayAbility）覆写
+在GameplayAbility类中（一般是继承自UGameplayAbility）覆写`ActivateAbility()`函数，该函数会在调用ASC的
